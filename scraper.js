@@ -57,10 +57,9 @@ module.exports = async (options) => {
     const firstUrl =
         `https://www.construction.am/arm/construction.php?act=earthworks-and-demolition&offset_pagination=${parseInt(options.start)}`;
     const partners = await extractPartners(firstUrl);
-    console.log(partners)
-    //const c = await Company.insertMany(partners).then(res => console.log('insertMany')).catch(err => console.log(err))
+    const c = await Company.insertMany(partners).then(res => console.log('insertMany')).catch(err => console.log(err))
 
     await browser.close();
 
-    return partners
+    return c
 };

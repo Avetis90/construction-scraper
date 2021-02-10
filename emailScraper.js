@@ -20,7 +20,6 @@ module.exports = async (data) => {
             }
         );
         await partnerPage.close();
-        console.log(email,'email')
         return email
     }
 
